@@ -209,7 +209,7 @@ jobs:
             # people knock on; the number on the RIGHT is the port the app
             # listens on inside the container, and that never changes.
             # dev answers on 8001. Which door does production answer on?
-            docker run -d --name bank --restart unless-stopped -p TODO:8000 --env-file ~/.env ${{ env.DOCKERHUB_USER }}/${{ env.IMAGE }}:main
+            docker run -d --name bank --restart unless-stopped -p 8000:8000 --env-file ~/.env ${{ env.DOCKERHUB_USER }}/${{ env.IMAGE }}:main
 
       - name: Is production actually up?
         # The deploy step going green only means the commands ran. This asks
